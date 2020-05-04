@@ -6,30 +6,40 @@
 
 .content::-webkit-scrollbar {
   border-radius: 20px;
+  /*   border: 2px solid blue; */
+  height: 40px;
+  display: flex;
+  cursor: pointer;
+
   /* display: none; */
 }
 
 .content::-webkit-scrollbar-track-piece:start {
-  margin-left: 60px;
+  margin-left: 50px;
   /* background-color: #001b48; */
 }
 
 .content::-webkit-scrollbar-track-piece:end {
-  margin-right: 60px;
+  margin-right: 20px;
 }
 
 .content::-webkit-scrollbar-thumb {
   background: #9acb34;
-  border-radius: 20px;
+  border-radius: 40px;
+  outline: none;
+  background: url("../src/images/arrow2.png");
+  background-size: 30px;
+  background-repeat: no-repeat;
+  background-position-y: center;
 }
 
 .content::-webkit-scrollbar-thumb:hover {
-  background: #b3b3b3;
-  box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+  /*  background: #b3b3b3; */
+  /*  box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2); */
 }
 
 .content::-webkit-scrollbar-thumb:active {
-  background-color: #999999;
+  /* background-color: #999999; */
 }
 
 .header {
@@ -113,6 +123,7 @@
   padding: 40px;
   box-shadow: 7px 15px 30px -1px black;
   overflow-x: scroll;
+  overflow-y: hidden;
   margin-bottom: 80px;
 }
 

@@ -1,4 +1,4 @@
-@media screen and (max-width: 415px) {
+@media screen and (max-width: 600px) {
   .header-menu ul {
     display: none;
   }
@@ -12,6 +12,10 @@
     border: none;
     border-radius: 0;
     box-shadow: none;
+  }
+
+  .content::-webkit-scrollbar {
+    display: none;
   }
 
   h2 {
