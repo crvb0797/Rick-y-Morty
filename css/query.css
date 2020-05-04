@@ -1,0 +1,29 @@
+@media screen and (max-width: 415px) {
+  .header-menu ul {
+    display: none;
+  }
+
+  .header-logo img {
+    width: 220px;
+  }
+
+  .content {
+    width: 100%;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  h2 {
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .footer ul {
+    display: none;
+  }
+
+  .footer {
+    justify-content: center;
+  }
+}
