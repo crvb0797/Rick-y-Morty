@@ -6,13 +6,44 @@
   }
 
   const $form = document.querySelector("#form");
-  $form.addEventListener("submit", function (event) {
+
+  function tempalteModal(personaje) {
+    return `
+      <h1>${personaje.name}</h1>
+      <div class="modal-content">
+        <img src="${personaje.image}" alt="Busqueda" />
+        <div class="info">
+          <p><span>Status: </span>${personaje.status}</p>
+          <hr />
+          <p><span>Species: </span>${personaje.species}</p>
+          <hr />
+          <p><span>Genero: </span>${personaje.gender}</p>
+          <hr />
+          <p><span>Origin: </span>${personaje.origin.name}</p>
+        </div>
+      </div>
+      <div class="modal-buttons">
+          <button class="modal-btn primary" id="hide-modal">Cerrar</button>
+        </div>
+        `;
+  }
+
+  $form.addEventListener("submit", async (event) => {
     event.preventDefault();
+    showModal();
+    const data = new FormData($form);
+    const personaje = await getData(
+      `https://rickandmortyapi.com/api/character/?name=${data.get("name")}`
+    );
+
+    /* debugger; */
+    const HTMLString = tempalteModal(personaje.results[0]);
+    $modal.innerHTML = HTMLString;
   });
 
   const character = await getData(`https://rickandmortyapi.com/api/character/`);
   const character2 = await getData(
-    `https://rickandmortyapi.com/api/character/?page=2`
+    `https://rickandmortyapi.com/api/character/?name=2`
   );
 
   function characterItemsTemplate(character) {
